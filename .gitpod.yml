@@ -1,6 +1,9 @@
 tasks:
-  - init: docker-compose pull -q
-  - command: docker-compose up -d
+  - name: Dev Server
+    init: |
+      docker-compose pull db --quiet
+    command: |
+      docker-compose up -d db
 
 vscode:
   extensions:
